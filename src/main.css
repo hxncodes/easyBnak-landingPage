@@ -588,9 +588,17 @@ video {
   position: relative;
 }
 
+.top-16{
+  top: 4rem;
+}
+
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
+}
+
+.ml-2{
+  margin-left: 0.5rem;
 }
 
 .mr-2{
@@ -609,16 +617,12 @@ video {
   display: flex;
 }
 
+.hidden{
+  display: none;
+}
+
 .h-12{
   height: 3rem;
-}
-
-.h-20{
-  height: 5rem;
-}
-
-.h-40{
-  height: 10rem;
 }
 
 .h-5{
@@ -633,16 +637,12 @@ video {
   width: 2.5rem;
 }
 
-.w-20{
-  width: 5rem;
-}
-
-.w-40{
-  width: 10rem;
-}
-
 .w-6{
   width: 1.5rem;
+}
+
+.w-\[90\%\]{
+  width: 90%;
 }
 
 .w-full{
@@ -673,8 +673,16 @@ video {
           appearance: none;
 }
 
+.flex-col{
+  flex-direction: column;
+}
+
 .items-center{
   align-items: center;
+}
+
+.justify-center{
+  justify-content: center;
 }
 
 .justify-between{
@@ -687,8 +695,18 @@ video {
   margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-y-6 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
 .overflow-hidden{
   overflow: hidden;
+}
+
+.rounded-2xl{
+  border-radius: 1rem;
 }
 
 .rounded-3xl{
@@ -740,6 +758,10 @@ video {
 
 .to-brightCyan{
   --tw-gradient-to: hsl(192, 70%, 51%) var(--tw-gradient-to-position);
+}
+
+.p-6{
+  padding: 1.5rem;
 }
 
 .px-4{
@@ -810,6 +832,33 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
+.navLink{
+  position: relative;
+  cursor: pointer;
+}
+
+.navLink::after{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 0.25rem;
+  width: 0px;
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: hsl(136, 65%, 51%) var(--tw-gradient-from-position);
+  --tw-gradient-to: hsl(136 65% 51% / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: hsl(192, 70%, 51%) var(--tw-gradient-to-position);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  content: var(--tw-content);
+  transition-duration: 300ms;
+}
+
+.navLink:hover::after{
+  content: var(--tw-content);
+  width: 100%;
+}
+
 .toggle-checkbox:checked {
   @apply: right-0 border-green-400;
   right: 0;
@@ -819,65 +868,6 @@ video {
 .toggle-checkbox:checked+.toggle-label {
   @apply: bg-[#31d35c];
   background: linear-gradient(#31d35c, #2bb7da);
-}
-
-.after\:absolute::after{
-  content: var(--tw-content);
-  position: absolute;
-}
-
-.after\:bottom-0::after{
-  content: var(--tw-content);
-  bottom: 0px;
-}
-
-.after\:left-0::after{
-  content: var(--tw-content);
-  left: 0px;
-}
-
-.after\:h-1::after{
-  content: var(--tw-content);
-  height: 0.25rem;
-}
-
-.after\:w-0::after{
-  content: var(--tw-content);
-  width: 0px;
-}
-
-.after\:bg-gradient-to-r::after{
-  content: var(--tw-content);
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-}
-
-.after\:from-limeGreen::after{
-  content: var(--tw-content);
-  --tw-gradient-from: hsl(136, 65%, 51%) var(--tw-gradient-from-position);
-  --tw-gradient-to: hsl(136 65% 51% / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.after\:to-brightCyan::after{
-  content: var(--tw-content);
-  --tw-gradient-to: hsl(192, 70%, 51%) var(--tw-gradient-to-position);
-}
-
-.after\:transition-all::after{
-  content: var(--tw-content);
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.after\:duration-300::after{
-  content: var(--tw-content);
-  transition-duration: 300ms;
-}
-
-.hover\:after\:w-full:hover::after{
-  content: var(--tw-content);
-  width: 100%;
 }
 
 :is(.dark .dark\:bg-dark){
@@ -895,8 +885,27 @@ video {
   background-color: hsl(233 26% 20% / var(--tw-bg-opacity));
 }
 
+:is(.dark .dark\:text-grayishBlue){
+  --tw-text-opacity: 1;
+  color: hsl(233 8% 62% / var(--tw-text-opacity));
+}
+
 :is(.dark .dark\:text-lightGrayishBlue){
   --tw-text-opacity: 1;
   color: hsl(220 16% 96% / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px){
+  .md\:inline{
+    display: inline;
+  }
+
+  .md\:flex{
+    display: flex;
+  }
+
+  .md\:hidden{
+    display: none;
+  }
 }
 
