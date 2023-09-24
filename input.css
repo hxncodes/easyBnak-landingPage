@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;700&display=swap');
+		
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.toggle-checkbox:checked {
+	@apply: right-0 border-green-400;
+	right: 0;
+	border-color: #68D391;
+}
+
+.toggle-checkbox:checked+.toggle-label {
+	@apply: bg-[#31d35c];
+	background: linear-gradient(#31d35c, #2bb7da);
+}
+

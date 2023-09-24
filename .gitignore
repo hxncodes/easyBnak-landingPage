@@ -1,0 +1,10 @@
+# design files
+*.sketch
+*.xd
+*.fig
+
+# macOS files
+.DS_Store
+
+# dependencies
+/node_modules
