@@ -760,6 +760,10 @@ video {
   --tw-gradient-to: hsl(192, 70%, 51%) var(--tw-gradient-to-position);
 }
 
+.fill-slate-100{
+  fill: #f1f5f9;
+}
+
 .p-6{
   padding: 1.5rem;
 }

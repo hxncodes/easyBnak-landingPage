@@ -50,7 +50,7 @@
           <label for="toggle" class="text-xs hidden md:inline">Dark mode</label>
           <img
             id="mobileIcon"
-            class="inline-block md:hidden cursor-pointer ml-2"
+            class="inline-block md:hidden cursor-pointer ml-2 fill-slate-100"
             src="../images/icon-hamburger.svg"
             alt="menu"
           />
@@ -63,19 +63,19 @@
           <ul
             class="flex flex-col items-center justify-center space-y-6 text-darkBlue dark:text-grayishBlue"
           >
-            <li class="navLink">
+            <li class="navLink navItem">
               <a>Home</a>
             </li>
-            <li class="navLink">
+            <li class="navLink navItem">
               <a>About</a>
             </li>
-            <li class="navLink">
+            <li class="navLink navItem">
               <a>Contact</a>
             </li>
-            <li class="navLink">
+            <li class="navLink navItem">
               <a>Blog</a>
             </li>
-            <li class="navLink">
+            <li class="navLink navItem">
               <a>Career</a>
             </li>
           </ul>
@@ -116,28 +116,29 @@
     </footer>
 
     <script>
-      // Dark mode toggle
       const html = document.querySelector("html");
-      const img = document.querySelector("#logo");
-      function toggleDarkMode() {
-        if (html.classList.contains("dark")) {
-          html.classList.remove("dark");
-          img.src = "../images//logo.svg";
-        } else {
-          html.classList.add("dark");
-          img.src = "../images/logoLight.svg";
-        }
-      }
+      const logo = document.querySelector("#logo");
+      const mobileIcon = document.querySelector("#mobileIcon");
+      const mobileMenu = document.querySelector("#mobileMenu");
+      const navLink = document.querySelectorAll(".navLink");
+
+      // Dark mode toggle
       document
         .querySelector("input[type='checkbox']#toggle")
         .addEventListener("click", toggleDarkMode);
 
-      // Mobile menu toggle
-      TODO: "Close the menu when user clicks outside the menu or clicks on navLink";
+      function toggleDarkMode() {
+        if (html.classList.contains("dark")) {
+          html.classList.remove("dark");
+          logo.src = "../images//logo.svg";
+        } else {
+          html.classList.add("dark");
+          logo.src = "../images/logoLight.svg";
+        }
+      }
 
-      const mobileIcon = document.querySelector("#mobileIcon");
-      const mobileMenu = document.querySelector("#mobileMenu");
-      const navLink = document.querySelectorAll(".navLink");
+      // Mobile menu toggle
+      mobileIcon.addEventListener("click", toggleMobileMenu);
 
       function toggleMobileMenu() {
         mobileMenu.classList.toggle("hidden");
@@ -147,7 +148,23 @@
           mobileIcon.src = "../images/icon-close.svg";
         }
       }
-      mobileIcon.addEventListener("click", toggleMobileMenu);
+
+      // Closes the Mobile menu when user click on any link
+      navLink.forEach((elem) => elem.addEventListener("click", navLinkClick));
+
+      function navLinkClick() {
+        if (!mobileMenu.classList.contains("hidden")) {
+          mobileIcon.click();
+        }
+      }
+
+      // Closes the mobile menu if user clicks outside
+      document.onclick = function (e) {
+        if (!mobileIcon.contains(e.target)) {
+          mobileMenu.classList.add("hidden");
+          mobileIcon.src = "../images/icon-hamburger.svg";
+        }
+      };
     </script>
   </body>
 </html>
