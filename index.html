@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="icon" sizes="32x32" href="../images/favicon.ico" />
+    <link rel="icon" type="icon" sizes="32x32" href="./images/favicon.ico" />
     <link rel="stylesheet" href="./main.css" />
     <title>Easybank</title>
   </head>
   <body
-    class="max-w-[1440PX] min-w-[375px] font-publicSans text-darkBlue dark:text-lightGrayishBlue"
+    class="max-w-[1440PX] min-w-[375px] font-publicSans text-grayishBlue overflow-x-clip"
   >
     <header class="bg-white dark:bg-darkerBlue w-full fixed z-50">
       <nav class="container mx-auto h-12 flex justify-between items-center">
-        <image class="h-5" id="logo" src="../images//logo.svg" alt="Easybank" />
+        <image class="h-5" id="logo" src="./images//logo.svg" alt="Easybank" />
 
         <ul class="hidden md:flex space-x-6 text-grayishBlue">
           <li class="navLink">
@@ -51,7 +51,7 @@
           <img
             id="mobileIcon"
             class="inline-block md:hidden cursor-pointer ml-2 fill-slate-100"
-            src="../images/icon-hamburger.svg"
+            src="./images/icon-hamburger.svg"
             alt="menu"
           />
         </div>
@@ -85,12 +85,14 @@
 
     <section class="bg-veryLightGray dark:bg-dark pt-12">
       <div class="flex container flex-col md:flex-row">
-        <div class="w-full md:w-1/2 h-full py-96 md:py-32">
-          <div class="flex flex-col items-center justify-center md:items-start">
-            <h1 class="text-6xl md:text-7xl">
+        <div class="w-full md:w-1/2 h-full pt-96 pb-4 md:py-32">
+          <div
+            class="flex flex-col items-center justify-center md:items-start sm:pt-20 md:pt-0 pb-12"
+          >
+            <h1 class="text-center md:text-left">
               Next generation digital banking
             </h1>
-            <p class="py-8 text-grayishBlue w-[22rem]">
+            <p class="py-8 w-[22rem]">
               Take your financial life online. Your Easybank account will be a
               one-stop-shop for spending, saving, budgeting, investing and much
               more.
@@ -106,90 +108,74 @@
           <div class="w-1/2 md:mt-[-100px]">
             <img
               class="w-full md:w-[70%] absolute right-0 top-0 md:mr-[-200px]"
-              src="../images//bg-intro-desktop.svg"
+              src="./images//bg-intro-desktop.svg"
               alt=""
             />
 
             <img
               class="w-[80%] md:w-[50%] absolute right-0 top-0 mt-[-50px] md:mr-[-100px]"
-              src="../images/image-mockups.png"
+              src="./images/image-mockups.png"
             />
           </div>
         </div>
       </div>
     </section>
     <section class="bg-lightGrayishBlue dark:bg-darkBlue">
-      <div class="container">
-        <h2>Second Section</h2>
-      </div>
-    </section>
-    <section class="bg-veryLightGray dark:bg-dark">
-      <div class="container">
-        <h1 class="text-2xl">Section 3</h1>
-      </div>
-    </section>
-    <footer class="bg-darkBlue dark:bg-darkerBlue text-veryLightGray">
-      <div class="container">
-        <h1 class="text-2xl">footer</h1>
-        <div class="attribution">
-          Challenge by
-          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-            >Frontend Mentor</a
-          >. Coded by <a href="#">hxnCodes</a>.
+      <div class="container flex flex-col py-14">
+        <div class="flex flex-col items-center md:items-start">
+          <h2
+            class="text-3xl font-thin text-darkBlue dark:text-lightGrayishBlue"
+          >
+            Why choose Easybank?
+          </h2>
+          <p class="pt-4 md:w-[600px]">
+            We levargae Open Banking to turn your bank account into your
+            financial hub. Control your finances like never before.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 pt-8">
+          <div class="card cursor-pointer hover:translate-x-1 transition-all">
+            <div class="rounded-ful">
+              <img src="./images/icon-online.svg" alt="online-banking" />
+            </div>
+            <h3>Online Banking</h3>
+            <p class="card-text">
+              Our modern web and mobile applications allow you to keep track of
+              your finances wherever you are in tghe world.
+            </p>
+          </div>
+          <div class="card cursor-pointer hover:translate-x-1 transition-all">
+            <div class="rounded-full">
+              <img src="./images/icon-budgeting.svg" alt="simple-budgeting" />
+            </div>
+            <h3>Simple budgeting</h3>
+            <p class="card-text">
+              See exactly where your money goes each month. Receives
+              notifications when you're close to hitting your limits.
+            </p>
+          </div>
+          <div class="card cursor-pointer hover:translate-x-1 transition-all">
+            <div class="rounded-full">
+              <img src="./images/icon-onboarding.svg" alt="" />
+            </div>
+            <h3>Fast Onboarding</h3>
+            <p class="card-text">
+              We don't do branches. Open your account in minutes online and
+              start taking control of your finances right away.
+            </p>
+          </div>
+          <div class="card cursor-pointer hover:translate-x-1 transition-all">
+            <div class="rounded-full">
+              <img src="./images/icon-api.svg" alt="open-api" />
+            </div>
+            <h3>Open Api</h3>
+            <p class="card-text">
+              Manage your savings, investments, pension and much more from one
+              account. Tracking your money has never been easier.
+            </p>
+          </div>
         </div>
       </div>
-    </footer>
-
-    <script>
-      const html = document.querySelector("html");
-      const logo = document.querySelector("#logo");
-      const mobileIcon = document.querySelector("#mobileIcon");
-      const mobileMenu = document.querySelector("#mobileMenu");
-      const navLink = document.querySelectorAll(".navLink");
-
-      // Dark mode toggle
-      document
-        .querySelector("input[type='checkbox']#toggle")
-        .addEventListener("click", toggleDarkMode);
-
-      function toggleDarkMode() {
-        if (html.classList.contains("dark")) {
-          html.classList.remove("dark");
-          logo.src = "../images//logo.svg";
-        } else {
-          html.classList.add("dark");
-          logo.src = "../images/logoLight.svg";
-        }
-      }
-
-      // Mobile menu toggle
-      mobileIcon.addEventListener("click", toggleMobileMenu);
-
-      function toggleMobileMenu() {
-        mobileMenu.classList.toggle("hidden");
-        if (mobileMenu.classList.contains("hidden")) {
-          mobileIcon.src = "../images/icon-hamburger.svg";
-        } else {
-          mobileIcon.src = "../images/icon-close.svg";
-        }
-      }
-
-      // Closes the Mobile menu when user click on any link
-      navLink.forEach((elem) => elem.addEventListener("click", navLinkClick));
-
-      function navLinkClick() {
-        if (!mobileMenu.classList.contains("hidden")) {
-          mobileIcon.click();
-        }
-      }
-
-      // Closes the mobile menu if user clicks outside
-      document.onclick = function (e) {
-        if (!mobileIcon.contains(e.target)) {
-          mobileMenu.classList.add("hidden");
-          mobileIcon.src = "../images/icon-hamburger.svg";
-        }
-      };
-    </script>
+    </section>
   </body>
 </html>
