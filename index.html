@@ -177,5 +177,138 @@
         </div>
       </div>
     </section>
+    <section class="bg-veryLightGray dark:bg-dark">
+      <div class="container flex flex-col py-14">
+        <div class="flex flex-col items-center md:items-start">
+          <h2>Latest Articles</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="card">
+              <div class="h-48">
+                <img
+                  class="w-full object-cover"
+                  src="./images/image-currency.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="p-5 bg-white dark:bg-darkBlue">
+                <small class="text-xs">By Clarie Robinson</small>
+                <h4>Receive money in any currency with no fees</h4>
+                <p class="card-text">
+                  The world is getting smaller and we're becoming more mobile.
+                  So why should be you forced to only receive money in a single
+                  currency
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="h-48">
+                <img
+                  class="w-full object-cover"
+                  src="./images/image-restaurant.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="p-5 bg-white dark:bg-darkBlue">
+                <small class="text-xs">By Wilson Hutton</small>
+                <h4>Treat yourself without worrying about money</h4>
+                <p class="card-text">
+                  Our simple budgeting feature allows you to separate out your
+                  spending and set realistic limits each month. That meaans you
+                  have full control.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="h-48">
+                <img
+                  class="w-full object-cover"
+                  src="./images/image-plane.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="p-5 bg-white dark:bg-darkBlue">
+                <small class="text-xs">By Wilson Hutton</small>
+                <h4>Take your Easybank card wherever you go</h4>
+                <p class="card-text">
+                  We want you to enjoy your travels. This is why we don't charge
+                  any fees on purchases whenwhile you're abroad. We will even
+                  show you your spending power.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="h-48">
+                <img
+                  class="w-full object-cover"
+                  src="./images/image-confetti.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="p-5 bg-white dark:bg-darkBlue">
+                <small class="text-xs">By Clarie Robinson</small>
+                <h4>our invite-only Beta accounts are now live!</h4>
+                <p class="card-text">
+                  After a lot of hard work by the whole team, we're excited to
+                  launch our closed beta. It is easy to request an invite
+                  through the site by visiting our invite page.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const html = document.querySelector("html");
+      const logo = document.querySelector("#logo");
+      const mobileIcon = document.querySelector("#mobileIcon");
+      const mobileMenu = document.querySelector("#mobileMenu");
+      const navLink = document.querySelectorAll(".navLink");
+
+      // Dark mode toggle
+      document
+        .querySelector("input[type='checkbox']#toggle")
+        .addEventListener("click", toggleDarkMode);
+
+      function toggleDarkMode() {
+        if (html.classList.contains("dark")) {
+          html.classList.remove("dark");
+          logo.src = "./images//logo.svg";
+        } else {
+          html.classList.add("dark");
+          logo.src = "./images/logoLight.svg";
+        }
+      }
+
+      // Mobile menu toggle
+      mobileIcon.addEventListener("click", toggleMobileMenu);
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("hidden");
+        if (mobileMenu.classList.contains("hidden")) {
+          mobileIcon.src = "./images/icon-hamburger.svg";
+        } else {
+          mobileIcon.src = "./images/icon-close.svg";
+        }
+      }
+
+      // Closes the Mobile menu when user click on any link
+      navLink.forEach((elem) => elem.addEventListener("click", navLinkClick));
+
+      function navLinkClick() {
+        if (!mobileMenu.classList.contains("hidden")) {
+          mobileIcon.click();
+        }
+      }
+
+      // Closes the mobile menu if user clicks outside
+      document.onclick = function (e) {
+        if (!mobileIcon.contains(e.target)) {
+          mobileMenu.classList.add("hidden");
+          mobileIcon.src = "./images/icon-hamburger.svg";
+        }
+      };
+    </script>
   </body>
 </html>
