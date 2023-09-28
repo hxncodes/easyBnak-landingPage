@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 h1 {
-	@apply text-4xl md:text-7xl text-darkBlue dark:text-lightGrayishBlue
+	@apply text-4xl lg:text-7xl md:text-6xl text-darkBlue dark:text-lightGrayishBlue
 }
 h2 {
 	@apply text-3xl font-thin text-darkBlue dark:text-lightGrayishBlue
@@ -43,4 +43,8 @@ button {
 
 .card-text {
 	@apply text-sm line-clamp-3
+}
+
+.box {
+	overflow-y: hidden	!important;
 }

@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="./main.css" />
     <title>Easybank</title>
   </head>
-  <body
-    class="max-w-[1440PX] min-w-[375px] font-publicSans text-grayishBlue overflow-x-clip"
-  >
+  <body class="max-w-[1440PX] min-w-[375px] font-publicSans text-grayishBlue">
     <header class="bg-white dark:bg-darkerBlue w-full fixed z-50">
       <nav class="container mx-auto h-12 flex justify-between items-center">
         <image class="h-5" id="logo" src="./images//logo.svg" alt="Easybank" />
@@ -85,7 +83,7 @@
 
     <section class="bg-veryLightGray dark:bg-dark pt-12">
       <div class="flex container flex-col md:flex-row">
-        <div class="w-full md:w-1/2 h-full pt-96 pb-4 md:py-32">
+        <div class="w-full md:w-1/2 h-full md:py-24 pt-8 order-2 md:order-1">
           <div
             class="flex flex-col items-center justify-center md:items-start sm:pt-20 md:pt-0 pb-12"
           >
@@ -100,16 +98,16 @@
             <button>Request Invite</button>
           </div>
         </div>
-        <div class="w-full md:w-1/2">
-          <div class="w-1/2 md:mt-[-100px]">
+        <div class="w-full md:w-1/2 relative order-1 md:order-2 pb-96">
+          <div class="flex w-1/2">
             <img
-              class="w-full md:w-[70%] absolute right-0 top-0 md:mr-[-200px]"
+              class="absolute right-0 top-0"
               src="./images//bg-intro-desktop.svg"
               alt=""
             />
 
             <img
-              class="w-[80%] md:w-[50%] absolute right-0 top-0 mt-[-50px] md:mr-[-100px]"
+              class="absolute right-0 top-0"
               src="./images/image-mockups.png"
             />
           </div>
