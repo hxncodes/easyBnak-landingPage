@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 h1 {
-	@apply text-4xl lg:text-7xl md:text-6xl text-darkBlue dark:text-lightGrayishBlue
+	@apply text-4xl md:text-7xl text-darkBlue dark:text-lightGrayishBlue
 }
 h2 {
 	@apply text-3xl font-thin text-darkBlue dark:text-lightGrayishBlue
@@ -16,10 +16,6 @@ h3 {
 
 h4 {
 	@apply py-2 text-xl font-thin text-darkBlue dark:text-lightGrayishBlue hover:text-brightCyan cursor-pointer
-}
-
-button {
-	@apply bg-gradient-to-r from-limeGreen to-brightCyan rounded-3xl py-2 px-4 text-lightGrayishBlue hover:bg-gradient-to-l hover:from-limeGreen hover:to-brightCyan
 }
 
 .navLink {
@@ -41,10 +37,7 @@ button {
 	@apply max-w-sm rounded-xl overflow-hidden flex flex-col items-center md:items-start mt-8
 }
 
+
 .card-text {
 	@apply text-sm line-clamp-3
-}
-
-.box {
-	overflow-y: hidden	!important;
 }

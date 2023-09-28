@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="./main.css" />
     <title>Easybank</title>
   </head>
-  <body class="max-w-[1440PX] min-w-[375px] font-publicSans text-grayishBlue">
+  <body
+    class="max-w-[1440PX] min-w-[375px] font-publicSans text-grayishBlue overflow-x-clip"
+  >
     <header class="bg-white dark:bg-darkerBlue w-full fixed z-50">
       <nav class="container mx-auto h-12 flex justify-between items-center">
         <image class="h-5" id="logo" src="./images//logo.svg" alt="Easybank" />
@@ -83,7 +85,7 @@
 
     <section class="bg-veryLightGray dark:bg-dark pt-12">
       <div class="flex container flex-col md:flex-row">
-        <div class="w-full md:w-1/2 h-full md:py-24 pt-8 order-2 md:order-1">
+        <div class="w-full md:w-1/2 h-full pt-96 pb-4 md:py-32">
           <div
             class="flex flex-col items-center justify-center md:items-start sm:pt-20 md:pt-0 pb-12"
           >
@@ -95,19 +97,23 @@
               one-stop-shop for spending, saving, budgeting, investing and much
               more.
             </p>
-            <button>Request Invite</button>
+            <button
+              class="bg-gradient-to-r from-limeGreen to-brightCyan rounded-3xl py-2 px-4 text-lightGrayishBlue"
+            >
+              Request Invite
+            </button>
           </div>
         </div>
-        <div class="w-full md:w-1/2 relative order-1 md:order-2 pb-96">
-          <div class="flex w-1/2">
+        <div class="w-full md:w-1/2">
+          <div class="w-1/2 md:mt-[-100px]">
             <img
-              class="absolute right-0 top-0"
+              class="w-full md:w-[70%] absolute right-0 top-0 md:mr-[-200px]"
               src="./images//bg-intro-desktop.svg"
               alt=""
             />
 
             <img
-              class="absolute right-0 top-0"
+              class="w-[80%] md:w-[50%] absolute right-0 top-0 mt-[-50px] md:mr-[-100px]"
               src="./images/image-mockups.png"
             />
           </div>
@@ -335,7 +341,11 @@
         <div
           class="w-full md:w-1/2 flex flex-col items-center md:items-end justify-between gap-8"
         >
-          <button>Request Invite</button>
+          <button
+            class="bg-gradient-to-r from-limeGreen to-brightCyan rounded-3xl py-2 px-4 text-lightGrayishBlue"
+          >
+            Request Invite
+          </button>
           <small>&copy;Easybank. All rights reserved</small>
         </div>
         <!-- <div class="attribution">
